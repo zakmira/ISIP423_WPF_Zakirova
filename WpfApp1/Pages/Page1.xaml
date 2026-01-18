@@ -1,0 +1,90 @@
+﻿<Page x:Class="WpfApp1.Pages.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" Background="Beige"
+      Title="Page1">
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" 
+                   Text="Добро пожаловать!" 
+                   FontSize="24" 
+                   FontWeight="Bold" 
+                   HorizontalAlignment="Center" 
+                   Margin="0,0,0,20"/>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+
+            <TextBlock Text="Выберите модель автомобиля:" 
+                       FontSize="20" 
+                       FontWeight="SemiBold" 
+                       Margin="0,0,0,10"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <RadioButton Content="Toyota Camry" 
+                             GroupName="Group1" 
+                             FontSize="15" 
+                             Checked="ModelRadioButton_Checked"
+                             Margin="5"/>
+                <RadioButton Content="Ford Mustang" 
+                             GroupName="Group1" 
+                             FontSize="15" 
+                             Checked="ModelRadioButton_Checked"
+                             Margin="5"/>
+                <RadioButton Content="Lada Niva" 
+                             GroupName="Group1" 
+                             FontSize="15" 
+                             Checked="ModelRadioButton_Checked"
+                             Margin="5"/>
+            </StackPanel>
+
+            <TextBlock Text="Выберите тип двигателя:" 
+                       FontSize="20" 
+                       FontWeight="SemiBold" 
+                       Margin="0,0,0,10"/>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,30">
+                <RadioButton Content="ДВС" 
+                             GroupName="Group2" 
+                             FontSize="15" 
+                             Checked="EngineRadioButton_Checked"
+                             Margin="5"/>
+                <RadioButton Content="Электрический" 
+                             GroupName="Group2" 
+                             FontSize="15" 
+                             Checked="EngineRadioButton_Checked"
+                             Margin="5"/>
+                <RadioButton Content="Гибрид" 
+                             GroupName="Group2" 
+                             FontSize="15" 
+                             Checked="EngineRadioButton_Checked"
+                             Margin="5"/>
+            </StackPanel>
+
+        </StackPanel>
+
+        <Button Grid.Row="2" 
+                x:Name="NextPageButton" 
+                Content="Далее" 
+                FontSize="18" 
+                Background="LawnGreen" 
+                Foreground="Black"
+                Height="50" 
+                Width="150" 
+                Click="NextPageButton_Click"
+                HorizontalAlignment="Center"
+                Margin="0,20,0,0"/>
+    </Grid>
+</Page>
+
+
+
