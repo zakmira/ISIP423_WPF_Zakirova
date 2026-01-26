@@ -24,8 +24,13 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigated += MainFrame_Navigated; // ← подписка
+
+            // Подписываемся на событие навигации
+            MainFrame.Navigated += MainFrame_Navigated;
+
+            // Загрузка 1 стр
             MainFrame.Navigate(new Pages.Page1());
+            UpdateProgressBar();
         }
 
         private void MainFrame_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
@@ -37,7 +42,7 @@ namespace WpfApp1
         {
             if (MainFrame.Content is Pages.Page5 currentPage5)
             {
-                // Если есть несохранённые данные и форма не валидна
+                // Если есть несохранённые данные и форма не сохранена
                 if (currentPage5.HasUnsavedChanges && !currentPage5.IsFormValidNow)
                 {
                     var result = MessageBox.Show(
@@ -71,17 +76,25 @@ namespace WpfApp1
 
         private void UpdateProgressBar()
         {
-            int step = MainFrame.Content switch
-            {
-                Pages.Page1 => 1,
-                Pages.Page2 => 2,
-                Pages.Page3 => 3,
-                Pages.Page4 => 4,
-                Pages.Page5 => 5,
-                _ => 1
-            };
+            int step = 1;
 
-            StepProgressBar.Value = step;
+            if (MainFrame.Content is Pages.Page1)
+                step = 1;
+            else if (MainFrame.Content is Pages.Page2)
+                step = 2;
+            else if (MainFrame.Content is Pages.Page3)
+                step = 3;
+            else if (MainFrame.Content is Pages.Page4)
+                step = 4;
+            else if (MainFrame.Content is Pages.Page5)
+                step = 5;
+
+            if (step > 1 && step < 5)
+            {
+                StepProgressBar.Value = step;
+            }
+
+            System.Diagnostics.Debug.WriteLine($"Текущий шаг: {step}");
         }
     }
 }

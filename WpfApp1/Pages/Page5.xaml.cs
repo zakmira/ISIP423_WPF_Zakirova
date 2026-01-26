@@ -88,7 +88,6 @@ namespace WpfApp1.Pages
         {
             MessageBox.Show("Заявка отправлена!", "Успех", MessageBoxButton.OK);
 
-            // Опционально: очистить форму
             NameBox.Text = "";
             PhoneBox.Text = "";
             MailBox.Text = "";
