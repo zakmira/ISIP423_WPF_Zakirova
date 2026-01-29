@@ -15,8 +15,8 @@ namespace WpfApp1
     public partial class OrderProduct
     {
         public int ID { get; set; }
-        public Nullable<int> ProductID { get; set; }
-        public Nullable<int> OrderID { get; set; }
+        public int ProductID { get; set; }
+        public int OrderID { get; set; }
     
         public virtual Order Order { get; set; }
         public virtual Product Product { get; set; }

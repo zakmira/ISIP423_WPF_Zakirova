@@ -51,40 +51,31 @@ namespace WpfApp1.Pages
                 return;
             }
 
-            try
+            Order order = new Order
             {
-                var order = new Order
-                {
-                    FIO = NameBox.Text.Trim(),
-                    Email = MailBox.Text?.Trim(),
-                    Address = AddressBox.Text.Trim(),
+                FIO = NameBox.Text.Trim(),
+                Email = MailBox.Text?.Trim(),
+                Address = AddressBox.Text.Trim(),
 
-                };
+            };
 
                 Core.Context.Order.Add(order);
-                Core.Context.SaveChanges(); // ← Теперь order.ID = 1, 2, 3...
+                Core.Context.SaveChanges(); 
 
                 foreach (var product in Cart)
                 {
                     var orderProduct = new OrderProduct
                     {
-                        
-                        OrderID = order.ID,   // ✅ Теперь ID существует
+                        OrderID = order.ID,   
                         ProductID = product.ID,
                     };
                     Core.Context.OrderProduct.Add(orderProduct);
                 }
 
-                Core.Context.SaveChanges(); // Сохраняем связи
+                Core.Context.SaveChanges(); 
 
-                MessageBox.Show("Заказ оформлен!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Заказ оформлен!");
                 NavigationService?.GoBack();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка: {ex.Message}\n\nДетали: {ex.InnerException?.Message}",
-                                "Ошибка БД", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
         }
     }
 }
