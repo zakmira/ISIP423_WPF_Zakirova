@@ -5,86 +5,79 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp1.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800" Background="Beige"
+      d:DesignHeight="450" d:DesignWidth="800" Background="BlanchedAlmond"
       Title="Page1">
 
-    <Grid Margin="20">
+
+
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" 
-                   Text="Добро пожаловать!" 
-                   FontSize="24" 
-                   FontWeight="Bold" 
-                   HorizontalAlignment="Center" 
-                   Margin="0,0,0,20"/>
+        <!-- Заголовок -->
+        <TextBlock Grid.Row="0"
+                   Text="Добро пожаловать в супермаркет!"
+                   FontSize="30" FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   Margin="0,10,0,40"/>
 
-        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top">
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <ItemsControl x:Name="ProductList">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" 
+                                   Margin="10"
+                                   HorizontalAlignment="Left"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
 
-            <TextBlock Text="Выберите модель автомобиля:" 
-                       FontSize="20" 
-                       FontWeight="SemiBold" 
-                       Margin="0,0,0,10"/>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
 
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
-                <RadioButton Content="Toyota Camry" 
-                             GroupName="Group1" 
-                             FontSize="15" 
-                             Checked="ModelRadioButton_Checked"
-                             Margin="5"/>
-                <RadioButton Content="Ford Mustang" 
-                             GroupName="Group1" 
-                             FontSize="15" 
-                             Checked="ModelRadioButton_Checked"
-                             Margin="5"/>
-                <RadioButton Content="Lada Niva" 
-                             GroupName="Group1" 
-                             FontSize="15" 
-                             Checked="ModelRadioButton_Checked"
-                             Margin="5"/>
-            </StackPanel>
+                        <StackPanel>
+                            <Image Source="{Binding ImagePath}"
+                                       Width="70" Height="70"
+                                       Stretch="Uniform"
+                                       HorizontalAlignment="Center"/>
 
-            <TextBlock Text="Выберите тип двигателя:" 
-                       FontSize="20" 
-                       FontWeight="SemiBold" 
-                       Margin="0,0,0,10"/>
+                            <TextBlock Text="{Binding Name}" 
+                                           FontWeight="Bold" 
+                                           FontSize="14" 
+                                           TextWrapping="Wrap"
+                                           HorizontalAlignment="Center"
+                                           Margin="0,5,0,0"/>
 
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,30">
-                <RadioButton Content="ДВС" 
-                             GroupName="Group2" 
-                             FontSize="15" 
-                             Checked="EngineRadioButton_Checked"
-                             Margin="5"/>
-                <RadioButton Content="Электрический" 
-                             GroupName="Group2" 
-                             FontSize="15" 
-                             Checked="EngineRadioButton_Checked"
-                             Margin="5"/>
-                <RadioButton Content="Гибрид" 
-                             GroupName="Group2" 
-                             FontSize="15" 
-                             Checked="EngineRadioButton_Checked"
-                             Margin="5"/>
-            </StackPanel>
+                            <TextBlock Text="{Binding Price, StringFormat=C, ConverterCulture=ru-RU}" 
+                                           HorizontalAlignment="Center"
+                                           Margin="0,2,0,5"/>
 
-        </StackPanel>
+                            <Button     Content="В корзину"
+                                        x:Name="AddToCart"
+                                        Click="ToCart_Click"
+                                        HorizontalAlignment="Center"
+                                        Background="Chocolate"
+                                        Margin="10"
+                                        Padding="10,4"
+                                        Width="130" Height="30"/>
+                        </StackPanel>
 
-        <Button Grid.Row="2" 
-                x:Name="NextPageButton" 
-                Content="Далее" 
-                FontSize="18" 
-                Background="LawnGreen" 
-                Foreground="Black"
-                Height="50" 
-                Width="150" 
-                Click="NextPageButton_Click"
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+
+        <Button Grid.Row="2"
+                x:Name="NextPageButton"
+                Content="Далее"
                 HorizontalAlignment="Center"
-                Margin="0,20,0,0"/>
+                VerticalAlignment="Bottom"
+                Background="Chocolate"
+                Margin="0,10,0,20"
+                Width="130"
+                Padding="20,10"
+                FontSize="16" Click="NextPageButton_Click"/>
+
     </Grid>
 </Page>
-
-
-

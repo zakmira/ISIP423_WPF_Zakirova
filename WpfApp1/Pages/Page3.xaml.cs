@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,34 +16,75 @@ using System.Windows.Shapes;
 
 namespace WpfApp1.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для Page3.xaml
-    /// </summary>
     public partial class Page3 : Page
     {
-        private CarConfig CurrentConfig;
-        public Page3(CarConfig config)
+        private List<Product> Cart { get; set; }
+
+        public Page3(List<Product> cart)
         {
             InitializeComponent();
-            CurrentConfig = config;
+            Cart = cart ?? new List<Product>();
+            OrderItemsList.ItemsSource = Cart;
 
-            ModelTextBlock.Text = $"Модель: {config.SelectedModel} ({config.ModelPrice:C})";
-            EngineTextBlock.Text = $"Двигатель: {config.SelectedEngine} ({config.EnginePrice:C})";
-            ColorTextBlock.Text = $"Цвет: {config.SelectedColor} ({config.ColorPrice:C})";
-            OptionTextBlock.Text = $"Опция: {config.SelectedOption} ({config.OptionPrice:C})";
-            TotalTextBlock.Text = $"ИТОГО: {config.TotalPrice:C}";
+            UpdateTotalAmount();
+            OrderButton.Click += OrderButton_Click;
+
         }
 
-        private void NextPageButton_Click(object sender, RoutedEventArgs e)
+        private void UpdateTotalAmount()
         {
-            if (CurrentConfig == null)
+            decimal? total = Cart.Sum(p => p.Price);
+            TotalAmountText.Text = $"Итого: {total:N2} ₽";
+        }
+
+        private void OrderButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(NameBox.Text))
             {
-                MessageBox.Show("Ошибка: CurrentConfig == null!");
+                MessageBox.Show("Введите ФИО");
                 return;
             }
 
-            var page4 = new Page4(CurrentConfig);
-            this.NavigationService.Navigate(page4);
+            if (string.IsNullOrWhiteSpace(AddressBox.Text))
+            {
+                MessageBox.Show("Введите адрес доставки");
+                return;
+            }
+
+            try
+            {
+                var order = new Order
+                {
+                    FIO = NameBox.Text.Trim(),
+                    Email = MailBox.Text?.Trim(),
+                    Address = AddressBox.Text.Trim(),
+
+                };
+
+                Core.Context.Order.Add(order);
+                Core.Context.SaveChanges(); // ← Теперь order.ID = 1, 2, 3...
+
+                foreach (var product in Cart)
+                {
+                    var orderProduct = new OrderProduct
+                    {
+                        
+                        OrderID = order.ID,   // ✅ Теперь ID существует
+                        ProductID = product.ID,
+                    };
+                    Core.Context.OrderProduct.Add(orderProduct);
+                }
+
+                Core.Context.SaveChanges(); // Сохраняем связи
+
+                MessageBox.Show("Заказ оформлен!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                NavigationService?.GoBack();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}\n\nДетали: {ex.InnerException?.Message}",
+                                "Ошибка БД", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

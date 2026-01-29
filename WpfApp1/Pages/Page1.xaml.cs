@@ -16,74 +16,56 @@ using System.Windows.Shapes;
 
 namespace WpfApp1.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для Page1.xaml
-    /// </summary>
     public partial class Page1 : Page
     {
-        private CarConfig CurrentConfig = new CarConfig();
-        public string SelectedModel { get; private set; } = "Toyota Camry"; // значение по умолчанию
-        public string SelectedEngine { get; private set; } = "ДВС";
+        private List<Product> Cart = new List<Product>();
 
         public Page1()
         {
             InitializeComponent();
-            System.Diagnostics.Debug.WriteLine($"CurrentConfig в Page1: {CurrentConfig}");
+            LoadProducts();
+            NextPageButton.Click += NextPageButton_Click;
         }
 
-        private void ModelRadioButton_Checked(object sender, RoutedEventArgs e)
+        private void LoadProducts()
         {
-            if (sender is RadioButton rb && rb.IsChecked == true)
+            try
             {
-                CurrentConfig.SelectedModel = rb.Content.ToString();
-                System.Diagnostics.Debug.WriteLine($"Модель изменена: {CurrentConfig.SelectedModel}");
-
-                // Присваиваем цену в зависимости от модели
-                switch (CurrentConfig.SelectedModel)
-                {
-                    case "Toyota Camry":
-                        CurrentConfig.ModelPrice = 2500000;
-                        break;
-                    case "Ford Mustang":
-                        CurrentConfig.ModelPrice = 5650000;
-                        break;
-                    case "Lada Niva":
-                        CurrentConfig.ModelPrice = 1500000;
-                        break;
-                }
+                var products = Core.Context.Product.ToList();
+                ProductList.ItemsSource = products;
             }
-
-           
-        }
-
-        private void EngineRadioButton_Checked(object sender, RoutedEventArgs e)
-        {
-            if (sender is RadioButton rb && rb.IsChecked == true)
+            catch (System.Exception ex)
             {
-                CurrentConfig.SelectedEngine = rb.Content.ToString();
-
-                // Присваиваем цену в зависимости от двигателя
-                switch (CurrentConfig.SelectedEngine)
-                {
-                    case "ДВС":
-                        CurrentConfig.EnginePrice = 250000;
-                        break;
-                    case "Электрический":
-                        CurrentConfig.EnginePrice = 500000;
-                        break;
-                    case "Гибрид":
-                        CurrentConfig.EnginePrice = 100000;
-                        break;
-                }
+                MessageBox.Show($"Ошибка: {ex.Message}");
             }
         }
 
         private void NextPageButton_Click(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine($"Передача CurrentConfig: {CurrentConfig}");
-            var page2 = new Page2(CurrentConfig); // передаём объект
-            this.NavigationService.Navigate(page2);
+            if (Cart.Count == 0)
+            {
+                MessageBox.Show("Добавьте товары в корзину!");
+                return;
+            }
 
+            var page2 = new Page2(Cart); 
+            NavigationService?.Navigate(new Page2(Cart));
+        }
+
+        private void AddToCart(Product product)
+        {
+            Cart.Add(product);
+            MessageBox.Show($"{product.Name} добавлен в корзину!");
+        }
+
+        private void ToCart_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            var product = button?.DataContext as Product;
+            if (product != null)
+            {
+                AddToCart(product);
+            }
         }
 
     }
