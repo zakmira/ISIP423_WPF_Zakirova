@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ecfacf2562664dd09d9a9b21381f6a96" Name="Diagram1">
+        <EntityTypeShape EntityType="cinemaModel.Age" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="cinemaModel.Booking" Width="1.5" PointX="7.5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cinemaModel.FilmPrice" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="cinemaModel.Films" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="cinemaModel.Genre" Width="1.5" PointX="5.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="cinemaModel.Hall" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="cinemaModel.HallType" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="cinemaModel.Seat" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="cinemaModel.Session" Width="1.5" PointX="5.25" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="cinemaModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="cinemaModel.Users" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
+        <AssociationConnector Association="cinemaModel.FK_Films_Age" ManuallyRouted="false" />
+        <AssociationConnector Association="cinemaModel.FK_Booking_Seat" ManuallyRouted="false" />
+        <AssociationConnector Association="cinemaModel.FK_Booking_Session" ManuallyRouted="false" />
+        <AssociationConnector Association="cinemaModel.FK_Booking_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="cinemaModel.FK_FilmPrice_Films" ManuallyRouted="false" />
+        <AssociationConnector Association="cinemaModel.FK_FilmPrice_Hall" ManuallyRouted="false" />
+        <AssociationConnector Association="cinemaModel.FK_Hall_HallType" ManuallyRouted="false" />
+        <AssociationConnector Association="cinemaModel.FK_Seat_Hall" ManuallyRouted="false" />
+        <AssociationConnector Association="cinemaModel.FilmsGenres" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
