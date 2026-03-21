@@ -1,0 +1,105 @@
+﻿<Page x:Class="WpfApp1.BuildPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BuildPage">
+
+   <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- Левая панель - выбор компонентов -->
+        <GroupBox Grid.Column="0" Header="Доступные компоненты" Margin="0,0,10,0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <StackPanel Grid.Row="0" Margin="0,0,0,10">
+                    <Grid Margin="0,0,0,5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <ComboBox Grid.Column="0" ItemsSource="{Binding PartTypes}" 
+                                  SelectedItem="{Binding SelectedPartType}"
+                                  DisplayMemberPath="name"
+                                  Margin="0,0,5,0"/>
+                        <ComboBox Grid.Column="1" ItemsSource="{Binding Manufacturers}" 
+                                  SelectedItem="{Binding SelectedManufacturer}"
+                                  DisplayMemberPath="name"
+                                  Margin="5,0,0,0"/>
+                    </Grid>
+                    
+                    <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
+                            Tag="Поиск..." Margin="0,0,0,5"/>
+                </StackPanel>
+                
+                <ListView Grid.Row="1" ItemsSource="{Binding AvailableParts}"
+                         MouseDoubleClick="ListView_MouseDoubleClick">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}" Width="250"/>
+                            <GridViewColumn Header="Производитель" DisplayMemberBinding="{Binding ManufacturerName}" Width="150"/>
+                            <GridViewColumn Header="Цена" DisplayMemberBinding="{Binding Price, StringFormat={}{0:C0}}" Width="100"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </GroupBox>
+        
+        <!-- Правая панель - выбранные компоненты -->
+        <GroupBox Grid.Column="1" Header="Выбрано">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <ListView Grid.Row="0" ItemsSource="{Binding SelectedParts}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}" Width="180"/>
+                            <GridViewColumn Header="Цена" DisplayMemberBinding="{Binding Price, StringFormat={}{0:C0}}" Width="80"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                
+                <Border Grid.Row="1" Background="#E0E0E0" Padding="10" Margin="0,10,0,0">
+                    <StackPanel>
+                        <TextBlock Text="Итого:" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding TotalPrice, StringFormat={}{0:C0}}" 
+                                  FontSize="20" FontWeight="Bold" Foreground="Green"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Row="2" Padding="10" Margin="0,10,0,0">
+                    <TextBlock Text="{Binding CompatibilityStatus}" TextWrapping="Wrap"/>
+                </Border>
+
+                <StackPanel Grid.Row="3" Margin="0,10,0,0">
+                    <TextBox Text="{Binding AssemblyName}" Margin="0,0,0,5"
+                            Tag="Название сборки"/>
+                    <TextBox Text="{Binding AssemblyAuthor}" Margin="0,0,0,5"
+                            Tag="Автор"/>
+                    <Button Content="Проверить совместимость" 
+                           Command="{Binding CheckCompatibilityCommand}"
+                           Padding="10,5" Margin="0,0,0,5"/>
+                    <Button Content="Сохранить сборку" 
+                           Command="{Binding SaveAssemblyCommand}"
+                           Padding="10,5" Background="LightGreen"/>
+                </StackPanel>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Page>

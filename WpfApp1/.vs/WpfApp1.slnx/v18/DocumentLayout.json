@@ -1,0 +1,226 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|c:\\users\\admin\\source\\repos\\wpfapp1\\wpfapp1\\models\\basepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\models\\basepart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|C:\\Users\\Admin\\source\\repos\\WpfApp1\\wpfapp1\\models\\compatibilityresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\models\\compatibilityresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|C:\\Users\\Admin\\source\\repos\\WpfApp1\\wpfapp1\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\viewmodels\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|C:\\Users\\Admin\\source\\repos\\WpfApp1\\wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|C:\\Users\\Admin\\source\\repos\\WpfApp1\\wpfapp1\\services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|C:\\Users\\Admin\\source\\repos\\WpfApp1\\wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|C:\\Users\\Admin\\source\\repos\\WpfApp1\\wpfapp1\\models\\assembly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\models\\assembly.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|C:\\Users\\Admin\\source\\repos\\WpfApp1\\wpfapp1\\pages\\savedbuildspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\pages\\savedbuildspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|C:\\Users\\Admin\\source\\repos\\WpfApp1\\wpfapp1\\pages\\savedbuildspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\pages\\savedbuildspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|C:\\Users\\Admin\\source\\repos\\WpfApp1\\wpfapp1\\pages\\buildpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\pages\\buildpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|C:\\Users\\Admin\\source\\repos\\WpfApp1\\wpfapp1\\pages\\buildpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\pages\\buildpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|C:\\Users\\Admin\\source\\repos\\WpfApp1\\wpfapp1\\services\\compatibilityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\services\\compatibilityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|C:\\Users\\Admin\\source\\repos\\WpfApp1\\wpfapp1\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28E493C9-C6BA-48DE-9ED8-DCC59C38A7FB}|WpfApp1\\WpfApp1.csproj|solutionrelative:wpfapp1\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DatabaseService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Services\\DatabaseService.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Services\\DatabaseService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Services\\DatabaseService.cs",
+              "RelativeToolTip": "WpfApp1\\Services\\DatabaseService.cs",
+              "ViewState": "AgIAAGcAAAAAAAAAAAAAAH0AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T14:23:04.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\MainWindow.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAUwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T14:36:08.663Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\ViewModels\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\ViewModels\\MainViewModel.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\ViewModels\\MainViewModel.cs",
+              "RelativeToolTip": "WpfApp1\\ViewModels\\MainViewModel.cs",
+              "ViewState": "AgIAAOAAAAAAAAAAAAAQwAABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T14:31:27.6Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CompatibilityResult.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Models\\CompatibilityResult.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Models\\CompatibilityResult.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Models\\CompatibilityResult.cs",
+              "RelativeToolTip": "WpfApp1\\Models\\CompatibilityResult.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T14:34:15.542Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BasePart.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Models\\BasePart.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Models\\BasePart.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Models\\BasePart.cs",
+              "RelativeToolTip": "WpfApp1\\Models\\BasePart.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T14:34:15.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\MainWindow.xaml",
+              "RelativeToolTip": "WpfApp1\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-21T14:25:39.346Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Assembly.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Models\\Assembly.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Models\\Assembly.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Models\\Assembly.cs",
+              "RelativeToolTip": "WpfApp1\\Models\\Assembly.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T14:34:14.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SavedBuildsPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Pages\\SavedBuildsPage.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Pages\\SavedBuildsPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Pages\\SavedBuildsPage.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\Pages\\SavedBuildsPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T14:22:57.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SavedBuildsPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Pages\\SavedBuildsPage.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\Pages\\SavedBuildsPage.xaml",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Pages\\SavedBuildsPage.xaml",
+              "RelativeToolTip": "WpfApp1\\Pages\\SavedBuildsPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-21T14:22:54.482Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BuildPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Pages\\BuildPage.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Pages\\BuildPage.xaml.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Pages\\BuildPage.xaml.cs",
+              "RelativeToolTip": "WpfApp1\\Pages\\BuildPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T14:22:45.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BuildPage.xaml",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Pages\\BuildPage.xaml",
+              "RelativeDocumentMoniker": "WpfApp1\\Pages\\BuildPage.xaml",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Pages\\BuildPage.xaml",
+              "RelativeToolTip": "WpfApp1\\Pages\\BuildPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-03-21T14:20:45.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CompatibilityService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Services\\CompatibilityService.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Services\\CompatibilityService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Services\\CompatibilityService.cs",
+              "RelativeToolTip": "WpfApp1\\Services\\CompatibilityService.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAQwFgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T14:23:01.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Properties\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "WpfApp1\\Properties\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\WpfApp1\\WpfApp1\\Properties\\AssemblyInfo.cs",
+              "RelativeToolTip": "WpfApp1\\Properties\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-21T14:34:03.148Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

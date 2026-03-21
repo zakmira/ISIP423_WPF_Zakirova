@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище pr15ModelContainer" CdmEntityContainer="pr15Entities">
+    <EntitySetMapping Name="assembly_">
+      <EntityTypeMapping TypeName="pr15Model.assembly_">
+        <MappingFragment StoreEntitySet="assembly$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="author" ColumnName="author" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="basepart_">
+      <EntityTypeMapping TypeName="pr15Model.basepart_">
+        <MappingFragment StoreEntitySet="basepart$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="manufacturerid" ColumnName="manufacturerid" />
+          <ScalarProperty Name="parttypeid" ColumnName="parttypeid" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="boardformfactorcase_">
+      <EntityTypeMapping TypeName="pr15Model.boardformfactorcase_">
+        <MappingFragment StoreEntitySet="boardformfactorcase$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="caseid" ColumnName="caseid" />
+          <ScalarProperty Name="formfactorid" ColumnName="formfactorid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="case_">
+      <EntityTypeMapping TypeName="pr15Model.case_">
+        <MappingFragment StoreEntitySet="case$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sizeid" ColumnName="sizeid" />
+          <ScalarProperty Name="expansionslots" ColumnName="expansionslots" />
+          <ScalarProperty Name="fans" ColumnName="fans" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="casesize_">
+      <EntityTypeMapping TypeName="pr15Model.casesize_">
+        <MappingFragment StoreEntitySet="casesize$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="certificate_">
+      <EntityTypeMapping TypeName="pr15Model.certificate_">
+        <MappingFragment StoreEntitySet="certificate$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cpu_">
+      <EntityTypeMapping TypeName="pr15Model.cpu_">
+        <MappingFragment StoreEntitySet="cpu$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="socketid" ColumnName="socketid" />
+          <ScalarProperty Name="numberofcores" ColumnName="numberofcores" />
+          <ScalarProperty Name="basecorefrequency" ColumnName="basecorefrequency" />
+          <ScalarProperty Name="maxcorefrequency" ColumnName="maxcorefrequency" />
+          <ScalarProperty Name="cachel3" ColumnName="cachel3" />
+          <ScalarProperty Name="igpuid" ColumnName="igpuid" />
+          <ScalarProperty Name="thermalpower" ColumnName="thermalpower" />
+          <ScalarProperty Name="hasigpu" ColumnName="hasigpu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fandimension_">
+      <EntityTypeMapping TypeName="pr15Model.fandimension_">
+        <MappingFragment StoreEntitySet="fandimension$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="formfactor_">
+      <EntityTypeMapping TypeName="pr15Model.formfactor_">
+        <MappingFragment StoreEntitySet="formfactor$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gpu_">
+      <EntityTypeMapping TypeName="pr15Model.gpu_">
+        <MappingFragment StoreEntitySet="gpu$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="gpuinterfaceid" ColumnName="gpuinterfaceid" />
+          <ScalarProperty Name="chipfrequency" ColumnName="chipfrequency" />
+          <ScalarProperty Name="videomemory" ColumnName="videomemory" />
+          <ScalarProperty Name="memorybus" ColumnName="memorybus" />
+          <ScalarProperty Name="recommendpower" ColumnName="recommendpower" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gpuinterface_">
+      <EntityTypeMapping TypeName="pr15Model.gpuinterface_">
+        <MappingFragment StoreEntitySet="gpuinterface$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hdd_">
+      <EntityTypeMapping TypeName="pr15Model.hdd_">
+        <MappingFragment StoreEntitySet="hdd$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rotationspeed" ColumnName="rotationspeed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="igpu_">
+      <EntityTypeMapping TypeName="pr15Model.igpu_">
+        <MappingFragment StoreEntitySet="igpu$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="manufacturer_">
+      <EntityTypeMapping TypeName="pr15Model.manufacturer_">
+        <MappingFragment StoreEntitySet="manufacturer$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="memorytype_">
+      <EntityTypeMapping TypeName="pr15Model.memorytype_">
+        <MappingFragment StoreEntitySet="memorytype$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="motherboard_">
+      <EntityTypeMapping TypeName="pr15Model.motherboard_">
+        <MappingFragment StoreEntitySet="motherboard$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="socketid" ColumnName="socketid" />
+          <ScalarProperty Name="formfactorid" ColumnName="formfactorid" />
+          <ScalarProperty Name="memoryslots" ColumnName="memoryslots" />
+          <ScalarProperty Name="memorytypeid" ColumnName="memorytypeid" />
+          <ScalarProperty Name="pcislots" ColumnName="pcislots" />
+          <ScalarProperty Name="sataports" ColumnName="sataports" />
+          <ScalarProperty Name="usbports" ColumnName="usbports" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="partassembly_">
+      <EntityTypeMapping TypeName="pr15Model.partassembly_">
+        <MappingFragment StoreEntitySet="partassembly$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="partid" ColumnName="partid" />
+          <ScalarProperty Name="assemblyid" ColumnName="assemblyid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="parttype_">
+      <EntityTypeMapping TypeName="pr15Model.parttype_">
+        <MappingFragment StoreEntitySet="parttype$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="powersupply_">
+      <EntityTypeMapping TypeName="pr15Model.powersupply_">
+        <MappingFragment StoreEntitySet="powersupply$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="power" ColumnName="power" />
+          <ScalarProperty Name="fandimensionid" ColumnName="fandimensionid" />
+          <ScalarProperty Name="certificationid" ColumnName="certificationid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="processorcooler_">
+      <EntityTypeMapping TypeName="pr15Model.processorcooler_">
+        <MappingFragment StoreEntitySet="processorcooler$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fandimensionid" ColumnName="fandimensionid" />
+          <ScalarProperty Name="heatpipes" ColumnName="heatpipes" />
+          <ScalarProperty Name="minspeed" ColumnName="minspeed" />
+          <ScalarProperty Name="maxspeed" ColumnName="maxspeed" />
+          <ScalarProperty Name="noiselevel" ColumnName="noiselevel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ram_">
+      <EntityTypeMapping TypeName="pr15Model.ram_">
+        <MappingFragment StoreEntitySet="ram$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="memorytypeid" ColumnName="memorytypeid" />
+          <ScalarProperty Name="capacity" ColumnName="capacity" />
+          <ScalarProperty Name="count" ColumnName="count" />
+          <ScalarProperty Name="ghz" ColumnName="ghz" />
+          <ScalarProperty Name="timings" ColumnName="timings" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="socket_">
+      <EntityTypeMapping TypeName="pr15Model.socket_">
+        <MappingFragment StoreEntitySet="socket$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="socketprocessorcooler_">
+      <EntityTypeMapping TypeName="pr15Model.socketprocessorcooler_">
+        <MappingFragment StoreEntitySet="socketprocessorcooler$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="socketid" ColumnName="socketid" />
+          <ScalarProperty Name="processorcoolerid" ColumnName="processorcoolerid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ssd_">
+      <EntityTypeMapping TypeName="pr15Model.ssd_">
+        <MappingFragment StoreEntitySet="ssd$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tbw" ColumnName="tbw" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="storagedevice_">
+      <EntityTypeMapping TypeName="pr15Model.storagedevice_">
+        <MappingFragment StoreEntitySet="storagedevice$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="capacity" ColumnName="capacity" />
+          <ScalarProperty Name="storagedeviceinterfaceid" ColumnName="storagedeviceinterfaceid" />
+          <ScalarProperty Name="storagedevicetypeid" ColumnName="storagedevicetypeid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="storagedeviceinterface_">
+      <EntityTypeMapping TypeName="pr15Model.storagedeviceinterface_">
+        <MappingFragment StoreEntitySet="storagedeviceinterface$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="storagedevicetype_">
+      <EntityTypeMapping TypeName="pr15Model.storagedevicetype_">
+        <MappingFragment StoreEntitySet="storagedevicetype$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="pr15Model.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="videoconnector_">
+      <EntityTypeMapping TypeName="pr15Model.videoconnector_">
+        <MappingFragment StoreEntitySet="videoconnector$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="videoconnectorgpu_">
+      <EntityTypeMapping TypeName="pr15Model.videoconnectorgpu_">
+        <MappingFragment StoreEntitySet="videoconnectorgpu$">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="gpuid" ColumnName="gpuid" />
+          <ScalarProperty Name="videoconnectorid" ColumnName="videoconnectorid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
