@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="BuildPage">
 
-   <Grid>
+   <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
@@ -32,24 +32,36 @@
                         <ComboBox Grid.Column="0" ItemsSource="{Binding PartTypes}" 
                                   SelectedItem="{Binding SelectedPartType}"
                                   DisplayMemberPath="name"
-                                  Margin="0,0,5,0"/>
+                                  Margin="0,0,5,0">
+                            <ComboBox.Resources>
+                                <Style TargetType="ComboBox">
+                                    <Setter Property="Padding" Value="5"/>
+                                </Style>
+                            </ComboBox.Resources>
+                        </ComboBox>
                         <ComboBox Grid.Column="1" ItemsSource="{Binding Manufacturers}" 
                                   SelectedItem="{Binding SelectedManufacturer}"
                                   DisplayMemberPath="name"
-                                  Margin="5,0,0,0"/>
+                                  Margin="5,0,0,0">
+                            <ComboBox.Resources>
+                                <Style TargetType="ComboBox">
+                                    <Setter Property="Padding" Value="5"/>
+                                </Style>
+                            </ComboBox.Resources>
+                        </ComboBox>
                     </Grid>
                     
                     <TextBox Text="{Binding SearchText, UpdateSourceTrigger=PropertyChanged}"
-                            Tag="Поиск..." Margin="0,0,0,5"/>
+                            Tag="Поиск..." Margin="0,0,0,5" Padding="5"/>
                 </StackPanel>
                 
                 <ListView Grid.Row="1" ItemsSource="{Binding AvailableParts}"
                          MouseDoubleClick="ListView_MouseDoubleClick">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}" Width="250"/>
-                            <GridViewColumn Header="Производитель" DisplayMemberBinding="{Binding ManufacturerName}" Width="150"/>
-                            <GridViewColumn Header="Цена" DisplayMemberBinding="{Binding Price, StringFormat={}{0:C0}}" Width="100"/>
+                            <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}" Width="200"/>
+                            <GridViewColumn Header="Производитель" DisplayMemberBinding="{Binding ManufacturerName}" Width="120"/>
+                            <GridViewColumn Header="Цена" DisplayMemberBinding="{Binding Price, StringFormat={}{0:C0}}" Width="80"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
@@ -69,8 +81,8 @@
                 <ListView Grid.Row="0" ItemsSource="{Binding SelectedParts}">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}" Width="180"/>
-                            <GridViewColumn Header="Цена" DisplayMemberBinding="{Binding Price, StringFormat={}{0:C0}}" Width="80"/>
+                            <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}" Width="150"/>
+                            <GridViewColumn Header="Цена" DisplayMemberBinding="{Binding Price, StringFormat={}{0:C0}}" Width="70"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
@@ -83,15 +95,15 @@
                     </StackPanel>
                 </Border>
 
-                <Border Grid.Row="2" Padding="10" Margin="0,10,0,0">
-                    <TextBlock Text="{Binding CompatibilityStatus}" TextWrapping="Wrap"/>
+                <Border Grid.Row="2" Padding="10" Margin="0,10,0,0" BorderBrush="Gray" BorderThickness="1">
+                    <TextBlock Text="{Binding CompatibilityStatus}" TextWrapping="Wrap" Foreground="Red"/>
                 </Border>
 
                 <StackPanel Grid.Row="3" Margin="0,10,0,0">
                     <TextBox Text="{Binding AssemblyName}" Margin="0,0,0,5"
-                            Tag="Название сборки"/>
+                            Tag="Название сборки" Padding="5"/>
                     <TextBox Text="{Binding AssemblyAuthor}" Margin="0,0,0,5"
-                            Tag="Автор"/>
+                            Tag="Автор" Padding="5"/>
                     <Button Content="Проверить совместимость" 
                            Command="{Binding CheckCompatibilityCommand}"
                            Padding="10,5" Margin="0,0,0,5"/>

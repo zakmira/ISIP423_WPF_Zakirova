@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,15 +18,19 @@ namespace WpfApp1
 {
     public partial class MainWindow : Window
     {
+        private MainViewModel _viewModel;
+
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new BuildPage());
+            _viewModel = new MainViewModel();
+            MainFrame.Navigate(new BuildPage { DataContext = _viewModel });
         }
 
         private void Build_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new BuildPage());
+            _viewModel = new MainViewModel();
+            MainFrame.Navigate(new BuildPage { DataContext = _viewModel });
         }
 
         private void SavedBuilds_Click(object sender, RoutedEventArgs e)

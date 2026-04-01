@@ -1,0 +1,40 @@
+```
+# Build artifacts
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.userprefs
+*.cache
+*.tmp
+*.log
+
+# Dependencies
+packages/
+node_modules/
+
+# IDE files
+.vs/
+.vshost/
+.user
+.suo
+.ReSharper*/
+_UpgradeReport_Files/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Configuration files
+*.userprefs
+*.userosscache
+*.sln.docstates
+
+# Output directories
+Debug/
+Release/
+x64/
+x86/
+```

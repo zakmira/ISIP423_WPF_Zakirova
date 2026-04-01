@@ -16,5 +16,12 @@ namespace WpfApp1.Models
         public decimal Price { get; set; }
         public string ManufacturerName { get; set; }
         public string PartTypeName { get; set; }
+
+        // Дополнительные свойства для отображения характеристик
+        public string SocketName { get; set; }
+        public string FormFactorName { get; set; }
+        public string MemoryTypeName { get; set; }
+        public int? PowerConsumption { get; set; }
+        public int? RecommendPower { get; set; }
     }
 }

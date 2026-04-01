@@ -169,8 +169,69 @@ namespace WpfApp1
             var part = parameter as BasePart;
             if (part != null && !SelectedParts.Any(p => p.PartTypeId == part.PartTypeId))
             {
+                // Загружаем дополнительные характеристики для выбранной детали
+                LoadPartDetails(part);
                 SelectedParts.Add(part);
                 CheckCompatibility();
+            }
+        }
+
+        private void LoadPartDetails(BasePart part)
+        {
+            // Загружаем характеристики в зависимости от типа детали
+            switch (part.PartTypeId)
+            {
+                case 1: // CPU
+                    var cpu = _dbService.GetCPUById(part.Id);
+                    if (cpu != null)
+                    {
+                        var socket = Core.Context.socket_.FirstOrDefault(s => s.id == cpu.socketid);
+                        part.SocketName = socket?.name;
+                        part.PowerConsumption = cpu.thermalpower;
+                    }
+                    break;
+                case 2: // GPU
+                    var gpu = _dbService.GetGPUById(part.Id);
+                    if (gpu != null)
+                    {
+                        part.RecommendPower = gpu.recommendpower;
+                    }
+                    break;
+                case 3: // RAM
+                    var ram = _dbService.GetRAMById(part.Id);
+                    if (ram != null)
+                    {
+                        var memType = Core.Context.memorytype_.FirstOrDefault(m => m.id == ram.memorytypeid);
+                        part.MemoryTypeName = memType?.name;
+                    }
+                    break;
+                case 4: // Motherboard
+                    var mobo = _dbService.GetMotherboardById(part.Id);
+                    if (mobo != null)
+                    {
+                        var socket = Core.Context.socket_.FirstOrDefault(s => s.id == mobo.socketid);
+                        var formFactor = Core.Context.formfactor_.FirstOrDefault(f => f.id == mobo.formfactorid);
+                        var memType = Core.Context.memorytype_.FirstOrDefault(m => m.id == mobo.memorytypeid);
+                        part.SocketName = socket?.name;
+                        part.FormFactorName = formFactor?.name;
+                        part.MemoryTypeName = memType?.name;
+                    }
+                    break;
+                case 5: // Case
+                    var case_ = _dbService.GetCaseById(part.Id);
+                    if (case_ != null)
+                    {
+                        var size = Core.Context.casesize_.FirstOrDefault(s => s.id == case_.sizeid);
+                        part.FormFactorName = size?.name;
+                    }
+                    break;
+                case 6: // PowerSupply
+                    var psu = _dbService.GetPowerSupplyById(part.Id);
+                    if (psu != null)
+                    {
+                        part.PowerConsumption = psu.power;
+                    }
+                    break;
             }
         }
 
