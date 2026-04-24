@@ -1,0 +1,125 @@
+﻿<Page x:Class="WpfApp17.Pages.Master.Master"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp17.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" Background="Gainsboro"
+      Title="Master">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button x:Name="Back" Content="Назад" Width="80" Height="30" 
+                HorizontalAlignment="Left" Click="Back_Click" Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Row="1" x:Name="Welcome" FontSize="20" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Margin="0,5,0,10"/>
+
+        <TabControl Grid.Row="2" Margin="0,5">
+
+            <TabItem Header="Мои записи" IsSelected="True">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                        <ItemsControl x:Name="Appointments">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="8" 
+                                            Margin="0,5,0,5" Padding="10" Background="White"
+                                            Cursor="Hand" MouseLeftButtonUp="Appointment_Click">    
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding ServiceName}" FontWeight="Bold" FontSize="14"/>
+                                                <TextBlock Text="{Binding ClientName}" FontSize="12" Foreground="Gray" Margin="0,5,0,0"/>
+                                                <TextBlock Text="{Binding AppointmentDateTime, StringFormat='Дата: dd.MM.yyyy HH:mm'}" FontSize="12"/>
+                                            </StackPanel>
+
+                                            <TextBlock Grid.Column="1" Text="{Binding Status}" FontSize="12" FontWeight="Bold" VerticalAlignment="Center" Margin="10,0,0,0">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Foreground" Value="Gray"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Status}" Value="Scheduled">
+                                                                <Setter Property="Foreground" Value="Blue"/>
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding Status}" Value="Completed">
+                                                                <Setter Property="Foreground" Value="Green"/>
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding Status}" Value="Cancelled">
+                                                                <Setter Property="Foreground" Value="Red"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Мои услуги">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+                        <Button x:Name="AddService" Content="Добавить услугу" Width="150" Height="30" 
+                                Click="AddService_Click" Background="LightGreen"/>
+                    </StackPanel>
+
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                        <ItemsControl x:Name="Services">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="8" 
+                                            Margin="0,5,0,5" Padding="10" Background="White">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding Name}" FontWeight="Bold" FontSize="14"/>
+                                                <TextBlock Text="{Binding Price, StringFormat='Цена: {0:F2} ₽'}" FontSize="12"/>
+                                                <TextBlock Text="{Binding ServiceTypeName}" FontSize="11" Foreground="Gray"/>
+                                            </StackPanel>
+
+                                            <Button Grid.Column="1" Content="Удалить" Width="70" Height="25" 
+                                                    Click="RemoveService_Click" Tag="{Binding}"
+                                                    Background="LightCoral" Margin="10,0,0,0"/>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>
+
+            

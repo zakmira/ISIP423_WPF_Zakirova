@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp17.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp17"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="Gainsboro">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="LightGray" Padding="10">
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="Login" Content="Вход" Width="80" Height="30" 
+                        Margin="0,0,10,0" Click="Login_Click"/>
+                <Button x:Name="Products" Content="Товары" Width="80" Height="30" 
+                        Margin="0,0,10,0" Click="Products_Click"/>
+                <Button x:Name="Account" Content="Мой аккаунт" Width="120" Height="30" 
+                        Margin="0,0,10,0" Click="Account_Click" Visibility="Collapsed"/>
+                <Button x:Name="Logout" Content="Выход" Width="80" Height="30" 
+                        Click="Logout_Click" Visibility="Collapsed"/>
+            </StackPanel>
+        </Border>
+
+        <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
