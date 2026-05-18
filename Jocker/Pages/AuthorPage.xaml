@@ -1,0 +1,104 @@
+﻿<Page x:Class="Jocker.Pages.AuthorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Jocker.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" Background="PaleGreen"
+      Title="AuthorPage">
+
+    <Page.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Page.Resources>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Мои книги" 
+                   FontSize="24" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Margin="0,0,0,10"/>
+
+        <Button Grid.Row="1" x:Name="btnAddBook" Content="Добавить новую книгу" 
+                HorizontalAlignment="Center" Margin="0,0,0,15"
+                Background="Orchid" Padding="10,5"
+                Click="AddBook_Click"/>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" 
+                    HorizontalAlignment="Center" Margin="0,0,0,15">
+            <RadioButton x:Name="Published" Content="Опубликованные" 
+                         GroupName="BookStatus" Margin="0,0,15,0"
+                         Checked="BookStatus_Checked"
+                         Background="Orchid" Padding="8,4"
+                         IsChecked="True"/>
+            <RadioButton x:Name="Frozen" Content="Замороженные" 
+                         GroupName="BookStatus" Margin="0,0,15,0"
+                         Checked="BookStatus_Checked"
+                         Background="Orchid" Padding="8,4"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto">
+            <ItemsControl x:Name="BooksControl">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Width="180" Height="320" Margin="10" 
+                                Background="#F5F5F5" BorderBrush="#DDDDDD" 
+                                BorderThickness="1" CornerRadius="8" Cursor="Hand"
+                                Tag="{Binding BookID}"
+                                MouseLeftButtonDown="BookCard_MouseLeftButtonDown">
+                            <StackPanel Margin="10">
+                                <Border Width="120" Height="160" 
+                                        Background="LightGray" CornerRadius="4"
+                                        HorizontalAlignment="Center" Margin="0,0,0,10">
+                                    <Image Width="120" Height="160" 
+                                           Source="{Binding CoverImage}" 
+                                           Stretch="UniformToFill"/>
+                                </Border>
+
+                                <TextBlock Text="{Binding Title}" FontWeight="Bold" 
+                                           TextWrapping="Wrap" MaxHeight="50" 
+                                           HorizontalAlignment="Center" Margin="0,0,0,5"/>
+
+                                <TextBlock Text="{Binding Rating, StringFormat='⭐ {0:F1}'}" 
+                                           FontSize="12" FontWeight="Bold"
+                                           HorizontalAlignment="Center" Margin="0,0,0,5"/>
+
+                                <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="0,5,0,0">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <Button x:Name="Edit" Content="Изменить" 
+                                                Width="60" Height="30" Margin="0,0,5,0"
+                                                Background="Orchid" BorderThickness="0"
+                                                Click="EditBook_Click"
+                                                Tag="{Binding BookID}"/>
+                                        <Button x:Name="Delete" Content="Удалить" 
+                                                Width="60" Height="30"
+                                                Background="Orchid" 
+                                                BorderThickness="0" Click="DeleteBook_Click"
+                                                Tag="{Binding BookID}"/>
+                                    </StackPanel>
+                                    <Button x:Name="Appeal" Content="Оспорить" 
+                                            Width="60" Height="30" Margin="0,5,0,0"
+                                            Background="Orchid"
+                                            BorderThickness="0" Click="AppealFreeze_Click"
+                                            Tag="{Binding BookID}"
+                                            Visibility="{Binding ShowAppealButton, Converter={StaticResource BoolToVisibilityConverter}}"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</Page>

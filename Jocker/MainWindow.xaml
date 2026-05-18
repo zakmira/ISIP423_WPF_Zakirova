@@ -1,0 +1,81 @@
+﻿<Window x:Class="Jocker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Jocker"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Background="PaleGreen">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="Orchid">
+            <StackPanel Margin="0,15,0,15">
+                <Button x:Name="Catalog" Click="Catalog_Click" 
+                        ToolTip="Каталог книг" Width="50" Height="50" 
+                        Margin="10,5" Background="Transparent" 
+                        BorderThickness="0">
+                    <Image Source="/Images/catalog.jpg" 
+                           Width="50" Height="50"/>
+                </Button>
+
+                <Button x:Name="BookLists" Click="BookLists_Click" 
+                        ToolTip="Списки книг" Width="50" Height="50" 
+                        Margin="10,5" Background="Transparent" 
+                        BorderThickness="0">
+                    <Image Source="/Images/lists.png"
+                           Width="50" Height="50"/>
+                </Button>
+
+                <Button x:Name="Profile" Click="Profile_Click" 
+                        ToolTip="Профиль" Width="50" Height="50" 
+                        Margin="10,5" Background="Transparent" 
+                        BorderThickness="0">
+                    <Image Source="/Images/profile.jpg" 
+                           Width="50" Height="50"/>
+                </Button>
+
+                <Button x:Name="Exit" Click="Exit_Click" 
+                        ToolTip="Выход" Width="50" Height="50"
+                        Margin="10,50,10,5" Background="Transparent" 
+                        BorderThickness="0">
+                    <Image Source="/Images/exit.png" 
+                           Width="50" Height="50"/>
+                </Button>
+
+                <Button x:Name="Admin" Click="Admin_Click" 
+                        ToolTip="Администрирование" Width="50" Height="50" 
+                        Margin="10,50,10,5" Background="Transparent" 
+                        BorderThickness="0" Visibility="Collapsed">
+                    <Image Source="/Images/admin.jpg" 
+                           Width="50" Height="50"/>
+                </Button>
+
+                <Button x:Name="AuthorPage" Click="AuthorPage_Click" 
+                        ToolTip="Страница автора" Width="50" Height="50" 
+                        Margin="10,5" Background="Transparent" 
+                        BorderThickness="0" Visibility="Collapsed">
+                    <Image Source="/Images/author.jpg" 
+                           Width="50" Height="50"/>
+                </Button>
+            </StackPanel>
+        </Border>
+ 
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Border x:Name="freezeWarning" Grid.Row="0" Background="Orchid"  Padding="10" Visibility="Collapsed">
+                <TextBlock x:Name="textFreezeWarning" Text="" Foreground="White" FontWeight="Bold"/>
+            </Border>
+
+            <Frame x:Name="mainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+        </Grid>
+    </Grid>
+</Window>

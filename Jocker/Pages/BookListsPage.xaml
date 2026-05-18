@@ -1,0 +1,129 @@
+﻿<Page x:Class="Jocker.Pages.BookListsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Jocker.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" Background="PaleGreen"
+      Title="BookListsPage">
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Мои списки книг" 
+                   FontSize="24" FontWeight="Bold" 
+                   HorizontalAlignment="Center" Margin="0,0,0,10"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" 
+                    HorizontalAlignment="Center" Margin="0,0,0,15">
+            <RadioButton x:Name="rbAbandoned" Content="Заброшено" 
+                         GroupName="BookLists" Margin="0,0,15,0"
+                         Checked="ListType_Checked"
+                         Background="Orchid" Padding="8,4"/>
+            <RadioButton x:Name="rbPlanned" Content="В планах" 
+                         GroupName="BookLists" Margin="0,0,15,0"
+                         Checked="ListType_Checked"
+                         Background="Orchid" Padding="8,4"/>
+            <RadioButton x:Name="rbReading" Content="Читаю" 
+                         GroupName="BookLists" Margin="0,0,15,0"
+                         Checked="ListType_Checked"
+                         Background="Orchid" Padding="8,4"/>
+            <RadioButton x:Name="rbRead" Content="Прочитано" 
+                         GroupName="BookLists" Margin="0,0,15,0"
+                         Checked="ListType_Checked"
+                         Background="Orchid" Padding="8,4"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" 
+                    HorizontalAlignment="Center" Margin="0,0,0,10">
+            <TextBox x:Name="SearchTitle" ToolTip="Поиск по названию"
+                     Width="150" Margin="0,0,5,0"/>
+            <TextBox x:Name="SearchAuthor" ToolTip="Поиск по автору"
+                     Width="150" Margin="0,0,5,0"/>
+            <Button x:Name="Search" Content="Найти" Background="Orchid" 
+                    Click="Search_Click" Width="60"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" 
+                    HorizontalAlignment="Center" Margin="0,0,0,10">
+            <TextBlock Text="Сортировать:" VerticalAlignment="Center" 
+                       Margin="0,0,5,0"/>
+            <ComboBox x:Name="Sort" Width="150" 
+                      Background="Orchid"
+                      BorderBrush="Orchid"
+                      SelectionChanged="Sort_SelectionChanged" 
+                      Margin="0,0,10,0"/>
+            <TextBlock Text="Жанр:" VerticalAlignment="Center" 
+                       Margin="0,0,5,0"/>
+            <ComboBox x:Name="Genre" Width="150" 
+                      Background="Orchid"
+                      BorderBrush="Orchid"
+                      SelectionChanged="Genre_SelectionChanged"/>
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="4" VerticalScrollBarVisibility="Auto">
+            <ItemsControl x:Name="BooksControl">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border Width="180" Height="320" Margin="10" 
+                                Background="#F5F5F5" BorderBrush="#DDDDDD" 
+                                BorderThickness="1" CornerRadius="8" Cursor="Hand"
+                                Tag="{Binding BookID}"
+                                MouseLeftButtonDown="BookCard_MouseLeftButtonDown">
+                            <StackPanel Margin="10">
+                                <Border Width="120" Height="160" 
+                                        Background="LightGray" CornerRadius="4"
+                                        HorizontalAlignment="Center" Margin="0,0,0,10">
+                                    <Image Width="120" Height="160" 
+                                           Source="{Binding CoverImage}" 
+                                           Stretch="UniformToFill"/>
+                                </Border>
+
+                                <TextBlock Text="{Binding Title}" FontWeight="Bold" 
+                                           TextWrapping="Wrap" MaxHeight="50" 
+                                           HorizontalAlignment="Center" Margin="0,0,0,5"/>
+
+                                <TextBlock Text="{Binding AuthorName}" FontSize="11" 
+                                           Foreground="Gray" HorizontalAlignment="Center" 
+                                           Margin="0,0,0,5"/>
+
+                                <TextBlock Text="{Binding Genres}" FontSize="10" 
+                                           Foreground="DarkGray" TextWrapping="Wrap" MaxHeight="40"
+                                           HorizontalAlignment="Center" Margin="0,0,0,5"/>
+
+                                <TextBlock Text="{Binding Rating, StringFormat='⭐ {0:F1}'}" 
+                                           FontSize="12" FontWeight="Bold"
+                                           HorizontalAlignment="Center" Margin="0,0,0,10"/>
+
+                                <ComboBox x:Name="MoveToList" 
+                                          Width="120" Height="25"
+                                          SelectedItem="{Binding CurrentListType}"
+                                          SelectionChanged="MoveToList_SelectionChanged"
+                                          Tag="{Binding BookID}"
+                                          Background="Orchid">
+                                    <ComboBoxItem Content="Заброшено"/>
+                                    <ComboBoxItem Content="В планах"/>
+                                    <ComboBoxItem Content="Читаю"/>
+                                    <ComboBoxItem Content="Прочитано"/>
+                                    <ComboBoxItem Content="Удалить из списков"/>
+                                </ComboBox>
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+    </Grid>
+</Page>
