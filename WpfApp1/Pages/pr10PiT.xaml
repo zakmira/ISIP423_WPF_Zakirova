@@ -1,0 +1,18 @@
+﻿<Window x:Class="WpfApp1.Pages.pr10PiT"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.Pages"
+        mc:Ignorable="d"
+        Title="pr10PiT" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="Spravka" 
+                Content="Справка" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Width="100" Height="30" 
+                Margin="10,10,0,0" 
+                Click="SpravkaButton_Click"/>
+    </Grid>
+</Window>

@@ -96,5 +96,12 @@ namespace WpfApp1
 
             System.Diagnostics.Debug.WriteLine($"Текущий шаг: {step}");
         }
+
+        private void NavigateToPr10_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            pr10PiT helpWindow = new pr10PiT();
+            helpWindow.Show();
+        }
     }
 }

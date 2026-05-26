@@ -17,12 +17,16 @@
         <Frame x:Name="MainFrame" Grid.Row="1" Navigated="MainFrame_OnNavigated" NavigationUIVisibility="Hidden"/>
         <Button x:Name="BackButton" Content="Назад" Background="LawnGreen" Click="BackButton_OnClick"  Margin="694,10,10,328" Grid.Row="1"/>
         <ProgressBar x:Name="StepProgressBar"
-                     Height="10"
-                     VerticalAlignment="Top"
-                     Margin="0,0,0,0"
-                     Minimum="1"
-                     Maximum="5"
-                     Value="1"
-                     Foreground="LawnGreen"/>    
+                     Height="10" VerticalAlignment="Top"
+                     Margin="0,0,0,0" Value="1"
+                     Minimum="1" Maximum="5"
+                     Foreground="LawnGreen"/>
+
+        <Button x:Name="NavigateToPr10Button" 
+                Content="Перейти к справочной странице" 
+                Width="200" Height="40" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                Click="NavigateToPr10_Click"/>
     </Grid>
 </Window>
